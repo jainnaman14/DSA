@@ -1,0 +1,96 @@
+                                                **MULTIPLICATION TABLE OF 2 USING RECURSION:-
+
+
+#include<iostream>
+using namespace std;
+
+void multiplicationTable(int i,int n){
+    if(i>10){
+        return;
+    }
+  cout<<n<<" * "<<i<<" = "<<n*i<<endl;
+  multiplicationTable(i+1,n);
+}
+
+int main(){
+    int n;
+    cout<<"Enter the number : ";
+    cin>>n;
+    multiplicationTable(1,n);
+    return 0;
+}
+
+
+                                            **SUM OF ALL DIGITS OF A NUMBER USING RECURSION:-
+
+#include<iostream>
+using namespace std;
+
+void sum(int i,int n,int s){
+    if(n==0){
+        return;
+    }
+    n=n%10;
+    s=s+n;
+    n=n/10;
+    sum(i+1,n,s);
+}
+int main(){
+    int n;
+    cout<<"enter the number";
+    cin>>n;
+    sum(1,n,0);
+    cout<<"the sum of all the digits is : "<<sum<<endl;
+    return 0;
+}
+
+
+                                      **FACTORIAL OF A NUMBER USING RECURSION:-
+
+
+#include<iostream>
+using namespace std;
+
+int factorial(int n){
+    if(n==0 || n==1){
+        return 1;
+    }
+    return n*factorial(n-1);
+    
+}
+int main(){
+    int n;
+    cout<<"Enter the number : ";
+    cin>>n;
+    int result = factorial(n);
+    cout<<"the factorial of "<<n<<" is : "<<result  <<endl;
+    return 0;
+}
+
+
+                                      **BINARY SEARCH USING RECURSION:-
+
+#include<iostream>
+using namespace std;
+
+int main(){
+    int n= 7,target = 6;
+    int arr[n]={2,3,4,5,6,6,7};
+    
+    int s=0, e=n-1;
+    while(s<e){
+        int mid=(s+e)/2;
+    
+    if(arr[mid]==target){
+        cout<<"elemnt found at the index:"<<mid ;
+        return 0;
+        }  
+     else if(arr[mid]>target){
+        e=mid-1;
+     } 
+     else{
+        s=mid+1;    
+     }
+    }
+}
+
